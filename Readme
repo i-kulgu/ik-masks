@@ -1,0 +1,14 @@
+# Usable masks as items
+
+This script is created by i-kulgu (https://github.com/i-kulgu/ik-masks)
+It's configurable so you can add a new mask from config.
+
+# Add new mask
+
+Go to config.lua and add a new mask like:
+
+["mask3"] = { -- must be unique
+    maskId = 13, -- the id number from your clothing
+},
+
+Add an item in your database with the unique itemname you created in config.
