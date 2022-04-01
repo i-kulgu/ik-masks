@@ -8,6 +8,6 @@ for k, v in pairs(Config["Masks"]) do
     ESX.RegisterUsableItem(k, function(source)
         local src = source
         maskId = v.maskId
-        TriggerClientEvent('ik-masks:client:wearMask', src, maskId)
+        TriggerClientEvent('ik-masks:client:wearMask', maskId)
     end)
 end
