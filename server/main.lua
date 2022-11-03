@@ -1,13 +1,8 @@
-ESX = nil
-TriggerEvent("esx:getSharedObject", function(library)
-	ESX = library
-end)
+local QBCore = exports['qb-core']:GetCoreObject()
 
--- Create usable masks from config file
-for k, v in pairs(Config["Masks"]) do
-    ESX.RegisterUsableItem(k, function(source)
+for k,v in pairs(Config.masks) do
+    QBCore.Functions.CreateUseableItem(k, function(source, item)
         local src = source
-        maskId = v.maskId
-        TriggerClientEvent('ik-masks:client:wearMask', maskId)
+        TriggerClientEvent("masks:client:wear", src, item.name)
     end)
 end
