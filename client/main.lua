@@ -21,37 +21,8 @@ local function SetupItems()
         goto nextIteration
 
         :: gangCheck ::
-        for i2 = 1, #curGang do
-            if PlayerData.gang.name ~= 'none' then
-                items[#items + 1] = products[i]
-            end
-        end
-
-        :: nextIteration ::
-    end
-    for i = 1, #products do
-        curGang = products[i].requiredGang
-
-        if curJob then goto jobCheck end
-        if curGang then goto gangCheck end
-        if checkLicense then goto licenseCheck end
-
-        items[#items + 1] = products[i]
-
-        goto nextIteration
-
-        :: gangCheck ::
-        for i2 = 1, #curGang do
-            if PlayerData.gang.name == curGang[i2] then
-                items[#items + 1] = products[i]
-            end
-        end
-
-        goto nextIteration
-
-        :: licenseCheck ::
-        if not products[i].requiresLicense then
-            items[#items + 1] = products[i]
+        if PlayerData.gang.name ~= 'none' then
+            items[#items + 1] = { name = k, price = v.price, amount = 10, info = {}, type = "item", slot = slot,}
         end
 
         :: nextIteration ::
@@ -59,7 +30,7 @@ local function SetupItems()
     return items
 end
 
-local function openShop()
+local function openShop(shop)
     local ShopItems = {}
     ShopItems.items = {}
     ShopItems.label = "Masks Shop"
@@ -70,7 +41,7 @@ local function openShop()
         ShopItems.items[k].slot = k
     end
 
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", "Itemshop_" .. shop, ShopItems)
+    TriggerServerEvent("inventory:server:OpenInventory", "shop", "MaskShop_" .. shop, ShopItems)
 end
 
 Citizen.CreateThread(function()
@@ -97,14 +68,12 @@ Citizen.CreateThread(function()
         if Config.Debug then print("Ped Created for MaskShop - ['"..k.."']") end
 
         if Config.Debug then print("MaskShop - ['"..k.."']") end
-        exports['qb-target']:AddCircleZone("MaskShop - ['"..k.."']", vector3(v.coords.x, v.coords.y, v.coords.z), 2.0, { name="MaskShop - ['"..k.."']", debugPoly=Config.Debug, useZ=true, },{ options = {{event = "ik-masks:client:openShop", icon = "fas fa-certificate", label = "Open Mask Shop"}}, distance = 2.0 })
+        exports['qb-target']:AddCircleZone("MaskShop - ['"..k.."']", vector3(v.coords.x, v.coords.y, v.coords.z), 2.0, { name="MaskShop - ['"..k.."']", debugPoly=Config.Debug, useZ=true, },{ options = {{event = "ik-masks:client:openShop", icon = "fas fa-certificate", label = "Open Mask Shop", shopnr = k}}, distance = 2.0 })
     end
 end)
 
-RegisterNetEvent("ik-masks:client:openShop", function()
-
-
-
+RegisterNetEvent("ik-masks:client:openShop", function(data)
+    openShop(data.shopnr)
 end)
 
 RegisterNetEvent('masks:client:wear', function(itemName)
