@@ -88,7 +88,7 @@ end)
 RegisterNetEvent('masks:client:wear', function(itemName)
     local ped = PlayerPedId()
     if not wearing then
-        QBCore.Functions.Progressbar("puton_mask", "Putting mask on..", 2500, false, true, {
+        QBCore.Functions.Progressbar("puton_mask", "Putting mask on..", 1000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -102,7 +102,7 @@ RegisterNetEvent('masks:client:wear', function(itemName)
             wearing = true
         end)
     elseif wearing then
-        QBCore.Functions.Progressbar("putoff_mask", "Putting mask off..", 2500, false , true, {
+        QBCore.Functions.Progressbar("putoff_mask", "Putting mask off..", 1000, false , true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
