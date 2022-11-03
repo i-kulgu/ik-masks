@@ -6,7 +6,7 @@ Easy configurable masks script with his own shop.
 
 - Add the following items in your qb-core\shared\items.lua
 
-```
+```lua
     -- IK-MASKS
     ['hockeymask']                      = {['name'] = 'hockeymask',                     ['label'] = 'Hockey Mask',              ['weight'] = 1,  		['type'] = 'item',  	['image'] = 'maskhockey.png',               ['unique'] = true,  	['useable'] = true,  	['shouldClose'] = true,  	['combinable'] = nil, 	['description'] = ''},
     ['blackbandana']                    = {['name'] = 'blackbandana',                   ['label'] = 'Black Bandana',            ['weight'] = 1,  		['type'] = 'item',  	['image'] = 'maskblackbandana.png',         ['unique'] = true,  	['useable'] = true,  	['shouldClose'] = true,  	['combinable'] = nil, 	['description'] = ''},
