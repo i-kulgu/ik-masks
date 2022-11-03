@@ -42,9 +42,11 @@ Easy configurable masks script with his own shop.
 - Go to config.lua and add the newly created item new mask like:
 
 ["maskname"]          ={ variation = 123, palette = 0, price = 450, gang = true},
--- Variation is the clothing number in masks
--- Palette is the texture number
--- Price is the price for selling the item in the shop
--- Gang is the boolean to show the mask in the shop only for gangs
+
+
+    - Variation is the clothing number in masks
+    - Palette is the texture number
+    - Price is the price for selling the item in the shop
+    - Gang is the boolean to show the mask in the shop only for gangs
 
 - Restart the server (items.lua changed) and the mask will work
