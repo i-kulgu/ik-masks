@@ -1,4 +1,14 @@
 Config = {
+    Debug = false,
+    peds = {
+        {
+            hash = `u_m_m_streetart_01`,
+            coords = vector4(0.0, 0.0, 0.0, 0.0),
+            sprite = 362,
+            blipcolor = 69,
+            label = "Rekli Masks"
+        }
+    },
     masks = {
         ["hockeymask"]      ={ variation = 69, palette = 3, price = 500, gang = false},
         ["blackbandana"]    ={ variation = 105, palette = 0, price = 500, gang = false},
