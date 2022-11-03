@@ -2,6 +2,11 @@
 
 Easy configurable masks script with his own shop.
 
+- Built-in Masks Shop
+- Add masks easily from config, they will be created as shop items and usable items automatically
+- Ability to set is as a gang mask, then only the players with gang perm will see them
+
+
 # Installation
 
 - Add the following items in your qb-core\shared\items.lua
