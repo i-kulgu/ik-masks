@@ -102,7 +102,7 @@ RegisterNetEvent('masks:client:wear', function(itemName)
             wearing = true
         end)
     elseif wearing then
-        QBCore.Functions.Progressbar("putoff_mask", "Putting mask off..", 1000, false , true, {
+        QBCore.Functions.Progressbar("putoff_mask", "Taking mask off..", 1000, false , true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
