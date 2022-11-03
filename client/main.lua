@@ -1,9 +1,18 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local PlayerData = QBCore.Functions.GetPlayerData()
+local PlayerData = {}
 local wearing = false
 local masks = Config.masks
 local MaskBlip = nil
 local ped = {}
+
+AddEventHandler('onResourceStart', function(resource)
+   if resource ~= GetCurrentResourceName() then return end
+   PlayerData = QBCore.Functions.GetPlayerData()
+end)
+
+RegisterNetEvent('QBCore:Client:OnGangUpdate', function()
+    PlayerData = QBCore.Functions.GetPlayerData()
+end)
 
 local function SetupItems()
     local products = Config.masks
