@@ -74,6 +74,7 @@ Citizen.CreateThread(function()
         SetBlockingOfNonTemporaryEvents(ped["MaskShop - ['"..k.."']"], true)
         FreezeEntityPosition(ped["MaskShop - ['"..k.."']"], true)
         SetEntityNoCollisionEntity(ped["MaskShop - ['"..k.."']"], PlayerPedId(), false)
+        SetEntityInvincible(ped["MaskShop - ['"..k.."']"], true)
         if Config.Debug then print("Ped Created for MaskShop - ['"..k.."']") end
 
         if Config.Debug then print("MaskShop - ['"..k.."']") end
