@@ -1,5 +1,7 @@
 # Usable masks as items
 
+If you like my work and want to support me : [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F2F3EU9ME)
+
 Easy configurable masks script with his own shop.
 
 - Built-in Masks Shop
